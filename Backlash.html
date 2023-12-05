@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Backlash</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+<!--Refreshes index.html after 180 seconds-->
+  <meta http-equiv="refresh" content="180;url=index.html">
+<!--Creates 3s fade-in animation-->
+  <style>
+    body {
+        animation: fadeInAnimation ease 3s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+    }
+    @keyframes fadeInAnimation {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+</style>
+</head>
+
+<body>
+    <ul>
+      <li><a href="index.html">Restart</a></li>
+        <li><a href="VoiceYouth.html">Back</a></li>
+    <li style="float:left"><p>Backlash</li>
+  </ul>
+
+    <br>
+
+    <div class="flex-container">
+      <div text-align="center">
+        <img src="JesusModal.png" class="img-responsive" style="width:100%"alt="Image" >
+        <!-- Trigger/Open The Modal -->
+        <button id="myBtn">Click: Lennon's 'Jesus" Claim!</button>
+    </div>
+
+      <div>
+        <p style="font-size:13pt;">Religious Controversy: The Beatles faced strong opposition from conservative figures, including William F. Buckley and religious leaders who decried their impact on youth.</p>
+        <p style="font-size:13pt;"> Boycott and Record Burnings: Southern radio stations stopped playing Beatles records, religious groups were burning albums.</p>
+        <p style="font-size:13pt;">Drug Use: Apparent to the audience by 1967 because of a McCartney interview, references to LSD, acid, and cannabis.</p>
+      
+      </div>
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+<img src="LennonJesus.jpg" width="50%">
+
+        <p>In 1966, John Lennon's assertion that the Beatles were more popular than Jesus sparked widespread controversy in the U.S., leading to protests, record boycotts, and public burnings. Though Lennon later clarified his statement, the incident underscored the intersection of music, celebrity, and cultural sensitivities during the turbulent 1960s.<p>
+          <span class="close"><button>Close</button></span>
+      </div>
+
+    </div>
+
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+  <!-- Stops video/audio from playing on modal close -->
+  <script>
+  $(function(){
+  $("body").on('hidden.bs.modal', function (e) {
+  var $iframes = $(e.target).find("iframe");
+  $iframes.each(function(index, iframe){
+  $(iframe).attr("src", $(iframe).attr("src"));
+  });
+  });
+  });
+  </script>
+
+
+</body>
+</html>

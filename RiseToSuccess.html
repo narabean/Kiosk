@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Rise To Success</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+<!--Refreshes index.html after 180 seconds-->
+  <meta http-equiv="refresh" content="180;url=index.html">
+<!--Creates 3s fade-in animation-->
+  <style>
+    body {
+        animation: fadeInAnimation ease 3s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+    }
+    @keyframes fadeInAnimation {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+</style>
+</head>
+
+<body>
+    <ul>
+      <li><a href="ChangingCulture.html">Next</a></li>
+        <li><a href="UnpackingBeatles.html">Back</a></li>
+    <li style="float:left"><p>Rise To Success</li>
+  </ul>
+
+    <br>
+
+    <div class="flex-container">
+      <div text-align="center">
+        <img src="AlbumsCrossover.jpg" class="img-responsive" style="width:100%"alt="Image" >
+        <!-- Trigger/Open The Modal -->
+        <button id="myBtn">Click: Specific Albums!</button>
+    </div>
+
+      <div>
+        <p style="font-size:12pt;">1957-1962: Formation, Hamburg Years, Brian Epstein, Decca Records Audition</p>
+        <p style="font-size:12pt;">1963-1964: Beatlemania, US Invasion, Hard Day’s Night, World Tours</p>
+        <p style="font-size:12pt;">1965-1967: Rubber Soul, Revolver, Sgt Pepper, Psychedelia, Eastern Influence </p>
+        <p style="font-size:12pt;">1968-1970: The White Album, Apple Corps, Let It Be, Abbey Road</p>
+        <p style="font-size:12pt;">1970 Breakup </p>
+      </div>
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+<img src="AlbumCovers.jpg" width="50%">
+
+        <p>The Beatles (1963), With the Beatles (1963), A Hard Day's Night (1964), Beatles for Sale (1964), Help! (1965), Rubber Soul (1965), Revolver (1966), Sgt. Pepper's Lonely Hearts Club Band (1967), The Beatles (White Album) (1968), Yellow Submarine (1969), Abbey Road (1969), Let It Be (1970)</p>
+          <span class="close"><button>Close</button></span>
+      </div>
+
+    </div>
+
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+  <!-- Stops video/audio from playing on modal close -->
+  <script>
+  $(function(){
+  $("body").on('hidden.bs.modal', function (e) {
+  var $iframes = $(e.target).find("iframe");
+  $iframes.each(function(index, iframe){
+  $(iframe).attr("src", $(iframe).attr("src"));
+  });
+  });
+  });
+  </script>
+
+
+</body>
+</html>
